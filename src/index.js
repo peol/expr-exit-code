@@ -14,9 +14,14 @@ function log() {
 	}
 }
 
+if ( !program.expression ) {
+	console.log( "No expression to evaluate, see --help" );
+	process.exit( 0 );
+}
+
 try {
 	log( `Args is: ${program.expression}` );
-	const value = compile ( program.expression )();
+	const value = compile( program.expression )();
 	log( `Value is: ${value}` );
 	const msg = value ? program.trueMessage : program.falseMessage;
 	if ( msg )  {
