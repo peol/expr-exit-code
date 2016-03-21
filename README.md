@@ -17,6 +17,9 @@ Replace `expr-exit-code` with `node dist/index.js` if in development.
 ```
 $ npm install -g expr-exit-code
 
+// view available CLI parameters:
+$ expr-exit-code --help
+
 // 5>6 is false, exit code 1:
 $ expr-exit-code -e "5>6"
 
@@ -27,5 +30,5 @@ $ expr-exit-code -e "1-1"
 $ expr-exit-code -e "1+1" -t "It is truthy"
 
 // message if expression is falsy:
-$ expr-exit-code -e "0+0" -t "It is falsy"
+$ expr-exit-code -e "0+0" -f "It is falsy"
 ```
